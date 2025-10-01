@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { CodeIcon, HamburgerIcon } from '../assets/icons'
+import cv from "../assets/JoseFloresCV.pdf" 
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -9,7 +10,7 @@ export function Navbar() {
     { label: 'About', href: '#about' },
     { label: 'Work', href: '#work' },
     { label: 'Contact', href: '#contact' },
-    { label: 'Resume', href: '#resume' }
+    { label: 'Resume', href: cv }
   ]
 
   const toggleMobileMenu = () => {
@@ -60,6 +61,7 @@ export function Navbar() {
                     key={item.label}
                     href={item.href}
                     className="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:opacity-80 text-fuchsia-600"
+                    download={item.label === 'Resume' ? "JoseFloresCV.pdf" : false}
                   >
                     {item.label}
                   </a>
