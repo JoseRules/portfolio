@@ -1,40 +1,110 @@
+import { useState, useEffect } from "react";
 import { GitHubIcon } from "../assets/icons";
-import { Resend } from 'resend';
-const resend = new Resend('re_TahAfWvB_L6hFiVdsFxHVwfhQi5a4k1iS');
+
+// Spinner component
+const Spinner = () => (
+  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+  </svg>
+);
+
+// Success Modal component
+const SuccessModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
+  useEffect(() => {
+    if (isOpen) {
+      const timer = setTimeout(() => {
+        onClose();
+      }, 3000);
+      
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen, onClose]);
+
+  if (!isOpen) return null;
+
+  return (
+    <div 
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+      onClick={onClose}
+    >
+      <div 
+        className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-md w-full mx-4 relative"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Close button */}
+        <button
+          onClick={onClose}
+          className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 transition-colors"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+        
+        {/* Success content */}
+        <div className="text-center">
+          <div className="w-16 h-16 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg className="w-8 h-8 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
+            Message Sent Successfully!
+          </h3>
+          <p className="text-gray-600 dark:text-gray-300">
+            Thank you for reaching out. I'll get back to you as soon as possible.
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export function Contact() {
+  const [isSending, setIsSending] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [message, setMessage] = useState('')
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    const formData = new FormData(e.target as HTMLFormElement)
-    const name = formData.get('name') as string
-    const email = formData.get('email') as string
-    const message = formData.get('message') as string
-    await sendEmail(name, email, message)
+    setIsSending(true)
+    try {
+      await sendEmail(name, email, message)
+    } finally {
+      setIsSending(false)
+    }
   }
   
   const sendEmail = async (name: string, email: string, message: string) => {
-    try {
-      const { data, error } = await resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'josep.plx@gmail.com',
-        subject: 'New Contact Form Submission',
-  
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-      })
-      if (error) {
-        console.error(error)
-      } else {
-        console.log(data)
-      }
-    } catch (error) {
-      console.error(error)
+    const response = await fetch('https://email-api-alpha-six.vercel.app/data', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({ name, email, message, authenticated: true }),
+    })
+    if (response.ok) {
+      console.log('Email sent successfully')
+      setName('');
+      setEmail('');
+      setMessage('');
+      setShowSuccessModal(true);
+    } else {
+      console.error('Failed to send email')
+      console.log(name, email, message)
     }
   }
 
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-fuchsia-600">Get In Touch</h2>
+    <>
+      <SuccessModal 
+        isOpen={showSuccessModal} 
+        onClose={() => setShowSuccessModal(false)} 
+      />
+      <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-4xl font-bold text-center mb-12 text-fuchsia-600">Get In Touch</h2>
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <h3 className="text-2xl font-semibold mb-6">Let's Connect</h3>
@@ -96,39 +166,55 @@ export function Contact() {
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Name</label>
                 <input 
                   type="text" 
+                  name="name"
                   id="name" 
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
                   placeholder="Your Name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Email</label>
-                <input 
+                <input  
                   type="email" 
+                  name="email"
                   id="email" 
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
                   placeholder="your.email@example.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">Message</label>
                 <textarea 
+                  name="message"
                   id="message" 
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-fuchsia-500 focus:border-transparent dark:bg-gray-800 dark:text-white"
                   placeholder="Your message here..."
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
               <button 
                 type="submit"
-                className="w-full bg-fuchsia-600 hover:bg-fuchsia-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200"
+                className={`w-full text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 flex items-center justify-center ${
+                  name === '' || email === '' || message === '' || isSending
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-fuchsia-600 hover:bg-fuchsia-700 cursor-pointer'
+                }`}
+                disabled={name === '' || email === '' || message === '' || isSending}
               >
-                Send Message
+                {isSending && <Spinner />}
+                {isSending ? 'Sending...' : 'Send Message'}
               </button>
             </form>
           </div>
         </div>
       </div>
     </section>
+    </>
   )
 }
