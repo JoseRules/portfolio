@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { GitHubIcon } from "../assets/icons";
+import { notifyEmail } from "../utils/email";
 
 // Spinner component
 const Spinner = () => (
@@ -79,20 +80,12 @@ export function Contact() {
   }
   
   const sendEmail = async (name: string, email: string, message: string) => {
-    const response = await fetch('https://email-api-alpha-six.vercel.app/data', {
-      method: 'POST',
-      headers: {'Content-Type':'application/json'},
-      body: JSON.stringify({ name, email, message, authenticated: true }),
-    })
-    if (response.ok) {
-      console.log('Email sent successfully')
+    const response = await notifyEmail({ name, email, message, authenticated: true })
+    if (response) {
       setName('');
       setEmail('');
       setMessage('');
       setShowSuccessModal(true);
-    } else {
-      console.error('Failed to send email')
-      console.log(name, email, message)
     }
   }
 
