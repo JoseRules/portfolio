@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react'
+import { getItem, setItem } from '../utils/localStorage'
 
 type Theme = 'light' | 'dark'
 
@@ -12,7 +13,7 @@ const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState<Theme>(() => {
     // Check localStorage first, then system preference
-    const savedTheme = localStorage.getItem('theme') as Theme
+    const savedTheme = getItem('theme');
     if (savedTheme) {
       return savedTheme
     }
@@ -22,7 +23,7 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const root = window.document.documentElement
     root.setAttribute('data-theme', theme)
-    localStorage.setItem('theme', theme)
+    setItem('theme', theme)
     console.log('Theme changed to:', theme) // Debug log
     console.log('HTML data-theme:', root.getAttribute('data-theme')) // Debug log
   }, [theme])
