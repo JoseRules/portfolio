@@ -44,7 +44,7 @@ export function Navbar() {
           {/* Logo and Name */}
           <div className="flex items-center space-x-3">
             <div className="flex-shrink-0">
-              <CodeIcon className="w-8 h-8" size={32} color="#c800de" />
+              <CodeIcon className="w-8 h-8" size={30} color="#c800de" />
             </div>
             <div className="text-xl font-bold text-fuchsia-600">
               Jose Flores

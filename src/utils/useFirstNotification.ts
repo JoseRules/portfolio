@@ -8,7 +8,7 @@ export function useFirstNotification() {
     const firstNotification = getItem('jfportfolio');
     if (!firstNotification) {
       setItem('jfportfolio', 'true')
-      notifyEmail({ name: 'Someone', email: 'john.doe@example.com', message: 'Someone access to your portfolio', authenticated: false })
+      notifyEmail({ name: 'Someone', email: 'john.doe@example.com', message: 'Someone accessed to your portfolio', authenticated: false })
     }
   }, [])
 

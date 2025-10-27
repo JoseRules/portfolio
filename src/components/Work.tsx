@@ -1,6 +1,7 @@
 import ACIImage from "../assets/aci.png";
 import ArtemImage from "../assets/artem.png";
-import { ReactIcon, TypeScriptIcon, NodeIcon, NextIcon, JavascriptIcon, GitHubIcon, JestIcon, JavaIcon, SpringbootIcon } from "../assets/icons";
+import CandlelandiaImage from "../assets/candlelandia.png";
+import { ReactIcon, TypeScriptIcon, NextIcon, JavascriptIcon, GitHubIcon, JestIcon, JavaIcon, SpringbootIcon } from "../assets/icons";
 
 export function Work() {
   return (
@@ -157,57 +158,58 @@ export function Work() {
      </section>
 
      {/* Projects Section */}
-     <section id="projects" className="hidden py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+     <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
        <div className="max-w-6xl mx-auto">
          <h2 className="text-4xl font-bold text-center mb-12 text-fuchsia-600">Projects</h2>
          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
          {/* Project 1 */}
-         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md">
            <div className="flex justify-between items-start mb-4">
              <div>
-               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">E-Commerce Platform</h3>
+               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Candlelandia</h3>
                <p className="text-fuchsia-600 font-medium">Personal Project</p>
              </div>
-             <span className="text-sm text-gray-500 dark:text-gray-400">Mar 2024 - Jun 2024</span>
+             <span className="text-sm text-gray-500 dark:text-gray-400">Sep 2025 - Present</span>
            </div>
            <p className="text-gray-600 dark:text-gray-300 mb-4">
-             A full-stack e-commerce platform with user authentication, product management, and payment integration.
+             Basic e-commerce website for a candle store.
            </p>
            
            {/* Tech Icons */}
            <div className="flex flex-wrap gap-2 mb-4">
              <ReactIcon className="w-6 h-6" size={24} color="#61DAFB" />
              <TypeScriptIcon className="w-6 h-6" size={24} color="#3178C6" />
-             <NodeIcon className="w-6 h-6" size={24} color="#339933" />
-             <JestIcon className="w-6 h-6" size={24} color="#C21325" />
+             <NextIcon className="w-7 h-7" size={24} color="#000000" />
            </div>
 
-           {/* Project Image and GitHub Link */}
-           <div className="flex gap-4">
-             <div className="flex-1">
-               <a 
-                 href="https://ecommerce-demo.com" 
-                 className="block group transition-transform duration-300 hover:scale-105"
-                 target="_blank"
-                 rel="noopener noreferrer"
-               >
-                 <div className="relative overflow-hidden rounded-lg shadow-md bg-gradient-to-br from-green-500 to-blue-600">
-                   <div className="w-full h-32 flex items-center justify-center text-white text-lg font-semibold">
-                     E-Commerce Demo
-                   </div>
-                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-10 transition-all duration-300 flex items-center justify-center">
-                     <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                       <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                       </svg>
-                     </div>
-                   </div>
-                 </div>
-               </a>
-             </div>
+          {/* Project Image and GitHub Link */}
+          <div className="flex gap-4">
+            <div className="flex-1">
+              <a 
+                href="https://candlelandia.vercel.app/" 
+                className="block group transition-transform duration-300 hover:scale-105"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <div className="relative overflow-hidden rounded-lg shadow-md">
+                  <img 
+                    src={CandlelandiaImage}
+                    alt="Candlelandia Project showcase"
+                    className="w-full h-80"
+                  />
+                  <div className="absolute inset-0 transition-all duration-300 flex items-center justify-center">
+                    <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
              <div className="flex items-center">
                <a 
-                 href="https://github.com/username/ecommerce-platform" 
+                 href="https://github.com/JoseRules/candlelandia" 
                  className="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
                  target="_blank"
                  rel="noopener noreferrer"
@@ -219,7 +221,7 @@ export function Work() {
          </div>
 
          {/* Project 2 */}
-         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+         <div className="hidden bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
            <div className="flex justify-between items-start mb-4">
              <div>
                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Task Management App</h3>
@@ -275,7 +277,7 @@ export function Work() {
          </div>
 
          {/* Project 3 */}
-         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+         <div className="hidden bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
            <div className="flex justify-between items-start mb-4">
              <div>
                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Weather Dashboard</h3>
@@ -331,7 +333,7 @@ export function Work() {
          </div>
 
          {/* Project 4 */}
-         <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+         <div className="hidden bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
            <div className="flex justify-between items-start mb-4">
              <div>
                <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Blog Platform</h3>
