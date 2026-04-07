@@ -109,7 +109,7 @@ export function Work() {
               {/* Image Section */}
               <div id="work-image-1" className="flex-shrink-0 md:w-80">
                 <a 
-                  href="" 
+                  href="https://artem-liart.vercel.app/" 
                   className="block group transition-transform duration-300 hover:scale-105"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -166,10 +166,10 @@ export function Work() {
          <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md">
            <div className="flex justify-between items-start mb-4">
              <div>
-               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Candlelandia</h3>
+               <h3 className="text-xl font-semibold text-gray-900 dark:text-white">GDL Glow</h3>
                <p className="text-fuchsia-600 font-medium">Personal Project</p>
              </div>
-             <span className="text-sm text-gray-500 dark:text-gray-400">Sep 2025 - Present</span>
+             <span className="text-sm text-gray-500 dark:text-gray-400">Sep 2025 - Current</span>
            </div>
            <p className="text-gray-600 dark:text-gray-300 mb-4">
              Basic e-commerce website for a candle store.
@@ -186,7 +186,7 @@ export function Work() {
           <div className="flex gap-4">
             <div className="flex-1">
               <a 
-                href="https://candlelandia.vercel.app/" 
+                href="https://www.gdlglow.com/" 
                 className="block group transition-transform duration-300 hover:scale-105"
                 target="_blank"
                 rel="noopener noreferrer"
