@@ -1,6 +1,7 @@
-import { useState, useEffect, useRef } from 'react'
-import { CodeIcon, HamburgerIcon } from '../assets/icons'
-import cv from "../assets/JoseFloresCV.pdf" 
+import { useState, useEffect, useRef } from 'react';
+import { CodeIcon, HamburgerIcon } from '../assets/icons';
+import { motion } from "motion/react";
+import cv from "../assets/JoseFloresCV.pdf";
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -17,7 +18,6 @@ export function Navbar() {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   }
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (navRef.current && !navRef.current.contains(event.target as Node)) {
@@ -41,35 +41,36 @@ export function Navbar() {
     }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo and Name */}
-          <div className="flex items-center space-x-3">
+          <motion.div 
+            initial={{ scale: 0 }} 
+            animate={{ scale: 1 }}
+            whileHover={{ scale: 1.1, rotate: 5 }}
+            className="flex items-center space-x-3">
             <div className="flex-shrink-0">
               <CodeIcon className="w-8 h-8" size={30} color="#c800de" />
             </div>
-            <div className="text-xl font-bold text-fuchsia-600">
+            <div className="text-xl font-bold text-fuchsia-600 cursor-default">
               Jose Flores
             </div>
-          </div>
+          </motion.div>
 
-          {/* Right side - Navigation and Mobile menu */}
           <div className="flex items-center space-x-4">
-            {/* Desktop Navigation */}
             <div className="hidden md:block">
               <div className="flex items-baseline space-x-8">
                 {navItems.map((item) => (
-                  <a
+                  <motion.a
+                    whileHover={{ scale: 1.2 }}
                     key={item.label}
                     href={item.href}
-                    className="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:opacity-80 text-fuchsia-600"
+                    className="px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 hover:text-fuchsia-500 text-fuchsia-600"
                     download={item.label === 'Resume' ? "JoseFloresCV.pdf" : false}
                   >
                     {item.label}
-                  </a>
+                  </motion.a>
                 ))}
               </div>
             </div>
 
-            {/* Mobile menu button */}
             <button
               onClick={toggleMobileMenu}
               className="md:hidden p-2 rounded-lg transition-colors duration-200 hover:opacity-80"
@@ -80,7 +81,6 @@ export function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden border-t" style={{
             borderColor: 'var(--nav-border, rgba(0, 0, 0, 0.1))',
