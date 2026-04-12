@@ -4,7 +4,7 @@ import JFImage from "../assets/perfil.jpg";
 
 export function About() {
   return (
-    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8">
+    <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 lg:h-[calc(100vh-65px)]">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-fuchsia-600">About Me</h2>
         <div className="grid md:grid-cols-2 gap-12 items-center">
