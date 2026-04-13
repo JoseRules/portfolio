@@ -23,11 +23,11 @@ export function About() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="overflow-hidden">
             <h3 className="text-2xl font-semibold mb-4">Hello, I'm Jose Flores</h3>
-            <p className="text-lg mb-6 text-gray-600 dark:text-gray-300">
+            <p className="text-lg mb-6 text-gray-300">
               I'm a passionate full-stack developer with expertise in modern web technologies.
               I love creating innovative solutions and bringing ideas to life through code.
             </p>
-            <p className="text-lg mb-6 text-gray-600 dark:text-gray-300">
+            <p className="text-lg mb-6 text-gray-300">
               With experience in React, Node.js and more, I enjoy building
               scalable applications that make a difference in people's lives.
             </p>
