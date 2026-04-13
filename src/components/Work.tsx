@@ -6,25 +6,25 @@ import { ReactIcon, TypeScriptIcon, NextIcon, JavascriptIcon, GitHubIcon, JestIc
 export function Work() {
   return (
     <>
-      <section id="work" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+      <section id="work" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-fuchsia-600">Work Experience</h2>
           <div className="space-y-8">
-            <div id="work-1" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div id="work-1" className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Web developer</h3>
+                  <h3 className="text-xl font-semibold text-white">Web developer</h3>
                   <p className="text-fuchsia-600 font-medium">Tata Consultancy Services</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Aug 2020 - Jun 2024</span>
+                <span className="text-sm text-gray-400">Aug 2020 - Jun 2024</span>
               </div>
               <div className="flex flex-col md:flex-row gap-6">
                 {/* Information Section */}
                 <div className="flex-1">
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-300 mb-4">
                     Worked for American Century Investments in the main end user application of the company.
                   </p>
-                  <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                  <ul className="text-sm text-gray-300 space-y-1">
                     <li>• Built new features and resolved defects</li>
                     <li>• Frontend development using ReactJS and NextJS</li>
                     <li>• Backend development using Mulesoft and Springboot</li>
@@ -61,18 +61,18 @@ export function Work() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Helpdesk Analyst (Tech Support)</h3>
+                  <h3 className="text-xl font-semibold text-white">Helpdesk Analyst (Tech Support)</h3>
                   <p className="text-fuchsia-600 font-medium">NTT Data Services</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Jul 2016 - Jan 2020</span>
+                <span className="text-sm text-gray-400">Jul 2016 - Jan 2020</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4">
                 Tech support for hospital personnel.
               </p>
-              <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+              <ul className="text-sm text-gray-300 space-y-1">
                 <li>• Assist users by diagnosing issues and providing resolutions for technical services or care issues over the phone by remoting into the end user computers.</li>
                 <li>• Use troubleshooting techniques and tools to identify products that are defective and follow guidelines in issuing service calls/contacts.</li>
                 <li>• Review and update information for the team's knowledge base to ensure being up to date with the information from all 2nd and 3rd level teams.</li>
@@ -82,21 +82,21 @@ export function Work() {
           </div>
           <h2 className="text-4xl font-bold text-center mb-12 text-fuchsia-600 mt-12">Education</h2>
           <div className="space-y-8">
-            <div id="work-1" className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div id="work-1" className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Java Full-Stack Developer Bootcamp</h3>
+                  <h3 className="text-xl font-semibold text-white">Java Full-Stack Developer Bootcamp</h3>
                   <p className="text-fuchsia-600 font-medium">Generation Mexico</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Jan 2020 - Apr 2020</span>
+                <span className="text-sm text-gray-400">Jan 2020 - Apr 2020</span>
               </div>
               <div className="flex flex-col md:flex-row gap-6">
                 {/* Information Section */}
                 <div className="flex-1">
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  <p className="text-gray-300 mb-4">
                     Bootcamp to learn Java Full-Stack development, technical english and soft skills.
                   </p>
-                  <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                  <ul className="text-sm text-gray-300 space-y-1">
                     <li>• Front-end (JS, HTML, CSS, ReactJS)</li>
                     <li>• Back-end (Java, Springboot)</li>
                     <li>• Database (MySQL)</li>
@@ -133,18 +133,18 @@ export function Work() {
               </div>
             </div>
 
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Biomedical Engineering</h3>
+                  <h3 className="text-xl font-semibold text-white">Biomedical Engineering</h3>
                   <p className="text-fuchsia-600 font-medium">Universidad de Guadalajara (CUCEI)</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Jan 2015 - Jun 2020</span>
+                <span className="text-sm text-gray-400">Jan 2015 - Jun 2020</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4">
                 Designs medical technology to improve diagnosis and treatment.
               </p>
-              <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
+              <ul className="text-sm text-gray-300 space-y-1">
                 <li>• <strong>Anatomy Knowledge:</strong> Study of human anatomy to understand how medical devices interact with the body.</li>
                 <li>• <strong>Biomaterials:</strong> -Materials compatible with biological tissues for implants and devices.</li>
                 <li>• <strong>Prosthetics:</strong> Design and development of functional artificial limbs and assistive devices.</li>
@@ -158,20 +158,20 @@ export function Work() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+      <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-12 text-fuchsia-600">Projects</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {/* Project 1 */}
-            <div className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg max-w-md">
+            <div className="bg-gray-800 p-6 rounded-lg shadow-lg max-w-md">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">GDL Glow</h3>
+                  <h3 className="text-xl font-semibold text-white">GDL Glow</h3>
                   <p className="text-fuchsia-600 font-medium">Personal Project</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Sep 2025 - Current</span>
+                <span className="text-sm text-gray-400">Sep 2025 - Current</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4">
                 Basic e-commerce website for a candle store.
               </p>
 
@@ -210,7 +210,7 @@ export function Work() {
                 <div className="flex items-center">
                   <a
                     href="https://github.com/JoseRules/candlelandia"
-                    className="p-3 rounded-lg bg-gray-200 dark:bg-gray-500 hover:bg-white dark:hover:bg-white transition-colors duration-300"
+                    className="p-3 rounded-lg bg-gray-500 hover:bg-white transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -221,15 +221,15 @@ export function Work() {
             </div>
 
             {/* Project 2 */}
-            <div className="hidden bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="hidden bg-gray-800 p-6 rounded-lg shadow-lg">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Task Management App</h3>
+                  <h3 className="text-xl font-semibold text-white">Task Management App</h3>
                   <p className="text-fuchsia-600 font-medium">Team Project</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Jan 2024 - Feb 2024</span>
+                <span className="text-sm text-gray-400">Jan 2024 - Feb 2024</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4">
                 A collaborative task management application with real-time updates and team collaboration features.
               </p>
 
@@ -266,7 +266,7 @@ export function Work() {
                 <div className="flex items-center">
                   <a
                     href="https://github.com/username/task-manager"
-                    className="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
+                    className="p-3 rounded-lg bg-gray-500 hover:bg-gray-600 transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -277,15 +277,15 @@ export function Work() {
             </div>
 
             {/* Project 3 */}
-            <div className="hidden bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="hidden bg-gray-800 p-6 rounded-lg shadow-lg">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Weather Dashboard</h3>
+                  <h3 className="text-xl font-semibold text-white">Weather Dashboard</h3>
                   <p className="text-fuchsia-600 font-medium">Personal Project</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Nov 2023 - Dec 2023</span>
+                <span className="text-sm text-gray-400">Nov 2023 - Dec 2023</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4">
                 A responsive weather dashboard with location-based forecasts and interactive charts.
               </p>
 
@@ -322,7 +322,7 @@ export function Work() {
                 <div className="flex items-center">
                   <a
                     href="https://github.com/username/weather-dashboard"
-                    className="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
+                    className="p-3 rounded-lg bg-gray-500 hover:bg-gray-600 transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -333,15 +333,15 @@ export function Work() {
             </div>
 
             {/* Project 4 */}
-            <div className="hidden bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg">
+            <div className="hidden bg-gray-800 p-6 rounded-lg shadow-lg">
               <div className="flex justify-between items-start mb-4">
                 <div>
-                  <h3 className="text-xl font-semibold text-gray-900 dark:text-white">Blog Platform</h3>
+                  <h3 className="text-xl font-semibold text-white">Blog Platform</h3>
                   <p className="text-fuchsia-600 font-medium">Open Source</p>
                 </div>
-                <span className="text-sm text-gray-500 dark:text-gray-400">Sep 2023 - Oct 2023</span>
+                <span className="text-sm text-gray-400">Sep 2023 - Oct 2023</span>
               </div>
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-gray-300 mb-4">
                 A modern blog platform with markdown support, comments, and admin dashboard.
               </p>
 
@@ -379,7 +379,7 @@ export function Work() {
                 <div className="flex items-center">
                   <a
                     href="https://github.com/username/blog-platform"
-                    className="p-3 rounded-lg bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-300"
+                    className="p-3 rounded-lg bg-gray-500 hover:bg-gray-600 transition-colors duration-300"
                     target="_blank"
                     rel="noopener noreferrer"
                   >

@@ -17,28 +17,8 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Light theme variables */
 :root,
 [data-theme="light"] {
-  --test-bg: #ef4444;
-  --card-bg: #f3f4f6;
-  --card-text: #374151;
-  --button-bg: #3b82f6;
-  --button-text: #ffffff;
-  --code-bg: #fef2f2;
-  --code-text: #dc2626;
-  --muted-text: #6b7280;
-  --nav-bg: rgba(255, 255, 255, 0.8);
-  --nav-border: rgba(0, 0, 0, 0.1);
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --logo-color: #3b82f6;
-  --button-bg-secondary: rgba(0, 0, 0, 0.05);
-  color-scheme: light;
-}
-
-/* Dark theme variables */
-[data-theme="dark"] {
   --test-bg: #3b82f6;
   --card-bg: #374151;
   --card-text: #f9fafb;
@@ -57,8 +37,13 @@ body {
 }
 
 @keyframes scroll-right {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  0% {
+    transform: translateX(-50%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
 }
 
 .animate-scroll-right {
